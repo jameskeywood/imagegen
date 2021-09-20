@@ -1,0 +1,16 @@
+Overview:
+- To create a machine learning algorithm that can create an image from a collection of photographs.
+- This can then be uploaded to an Instagram account automatically
+- The bot can read how many likes the image recieves, and if it's high enough will add the image to the photo collection.
+- Images will become more and more abstract, following will decide the art's direction.
+
+Resources:
+- InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
+- Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
+- Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
+- GAN overview: https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f
+
+Collections:
+- Landscapes
+- Planets
+- Plant life
