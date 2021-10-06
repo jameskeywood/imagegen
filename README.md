@@ -25,3 +25,8 @@ Search function to create a collection based on internet images.
 
 - InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
 - Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
+
+## Versions
+- TensorFlow v2.6.0
+- CUDA v11.0.2
+- cuDDN v8.2.1
