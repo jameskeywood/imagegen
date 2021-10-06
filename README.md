@@ -4,11 +4,7 @@
 - Machine learning algorithm that can create an image from a collection of photographs.
 - Hoping to create a GAN (Generative Adversarial Network) machine learning algorithm.
 
-## Resources
-- Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
-- GAN overview: https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f
-- InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
-- Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
+![GANs](https://github.com/jameskeywood/geno/blob/main/research/GANs.png?raw=true)
 
 ## Forks
 Instagram account to post the generated images.
@@ -21,6 +17,8 @@ Search function to create a collection based on internet images.
 - Script will scrape internet for collection of related images.
 - Algorithm will then produce an image based on search.
 
----
-
-![GANs](https://github.com/jameskeywood/geno/blob/main/research/GANs.png?raw=true)
+## Resources
+- Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
+- GAN overview: https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f
+- InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
+- Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
