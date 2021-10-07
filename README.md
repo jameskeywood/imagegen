@@ -23,6 +23,7 @@ Search function to create a collection based on internet images.
 - Building a simple GAN: https://blog.paperspace.com/implementing-gans-in-tensorflow/
 - Deep convolutional GAN: https://www.tensorflow.org/tutorials/generative/dcgan
 - Load images: https://www.tensorflow.org/tutorials/load_data/images
+- Datasets similar to MNIST: https://analyticsindiamag.com/mnist/
 
 - InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
 - Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
