@@ -4,6 +4,8 @@
 - Machine learning algorithm that can create an image from a collection of photographs.
 - Hoping to create a GAN (Generative Adversarial Network) machine learning algorithm.
 
+##
+
 ![GANs](https://github.com/jameskeywood/geno/blob/main/research/GANs.png?raw=true)
 
 ## Forks
