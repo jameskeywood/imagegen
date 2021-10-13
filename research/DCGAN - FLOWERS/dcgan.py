@@ -39,10 +39,6 @@ data_dir = tf.keras.utils.get_file(origin=dataset_url,
 path = pathlib.Path(data_dir)
 print("Dataset directory:", path)
 
-# calculate and print amount of images in dataset
-image_count = len(list(path.glob('*/*.jpg')))
-print("Image count:", image_count)
-
 ###
 
 # load flower dataset
