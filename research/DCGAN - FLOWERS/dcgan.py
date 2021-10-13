@@ -76,7 +76,7 @@ train_images = train_images.reshape(train_images.shape[0], 28, 28, 1)
 train_images = (train_images - 127.5) / 127.5  # Normalize the images to [-1, 1]
 
 BUFFER_SIZE = 60000
-BATCH_SIZE = 1000
+BATCH_SIZE = 1
 
 # Batch and shuffle the data
 train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
@@ -154,7 +154,7 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  generator=generator,
                                  discriminator=discriminator)
 
-EPOCHS = 10
+EPOCHS = 1000
 noise_dim = 100
 num_examples_to_generate = 1
 
