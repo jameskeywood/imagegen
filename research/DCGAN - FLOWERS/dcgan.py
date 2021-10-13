@@ -50,8 +50,11 @@ class_names = train_images.class_names
 # select dataset class
 class_num = 3
 train_images = train_images.batch(class_num)
+selected_class = class_names[class_num]
+# print selected dataset class
+print("\nSelected class:", selected_class, "\n")
 
-data_dir = os.path.join(data_dir, class_names[class_num])
+data_dir = os.path.join(data_dir, selected_class)
 train_images = []
 for _, file in enumerate(os.listdir(data_dir)):
     temp_dir = os.path.join(data_dir, file)
