@@ -28,6 +28,7 @@ Search function to create a collection based on internet images.
 - Datasets similar to MNIST: https://analyticsindiamag.com/mnist/
 - Flower dataset: https://medium.com/@nutanbhogendrasharma/tensorflow-image-classification-with-tf-flowers-dataset-e36205deb8fc
 - Keras Image data preprocessing: https://keras.io/api/preprocessing/image/#imgtoarray-function
+- PIL resize images: https://www.geeksforgeeks.org/python-pil-image-resize-method/
 
 - InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
 - Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
