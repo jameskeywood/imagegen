@@ -30,9 +30,6 @@ Search function to create a collection based on internet images.
 - Keras Image data preprocessing: https://keras.io/api/preprocessing/image/#imgtoarray-function
 - PIL resize images: https://www.geeksforgeeks.org/python-pil-image-resize-method/
 
-- InstaPy overview: https://realpython.com/instagram-bot-python-instapy/
-- Post with InstaPy: https://stackoverflow.com/questions/59862546/can-i-automatically-upload-pictures-to-instagram
-
 ## Versions
 - TensorFlow v2.6.0
 - CUDA v11.0.2
