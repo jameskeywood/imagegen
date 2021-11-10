@@ -36,7 +36,7 @@ Search function to create a collection based on internet images.
 Put the expected archive in the directory of the script, and it will be extracted and used.
 - Face dataset: http://vis-www.cs.umass.edu/lfw/lfw.tgz
 - Flower dataset: https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
-- Dog dataset: vision.stanford.edu/aditya86/ImageNetDogs/images.tar
+- Dog dataset: https://vision.stanford.edu/aditya86/ImageNetDogs/images.tar
 
 ## Versions
 - TensorFlow v2.6.0
