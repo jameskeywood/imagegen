@@ -18,6 +18,12 @@ import pathlib
 import matplotlib.pyplot as plt
 from IPython import display
 
+# extract photos from archive
+import tarfile
+my_tar = tarfile.open('flower_photos.tgz')
+my_tar.extractall('./flower_photos') # specify which folder to extract to
+my_tar.close()
+
 # variables
 results_dir = "output/"
 
@@ -28,36 +34,16 @@ np_config.enable_numpy_behavior()
 # print TensorFlow version
 print("Version:", tf.__version__)
 
-# download, if not already, the flower dataset
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
-
-data_dir = tf.keras.utils.get_file(origin=dataset_url,
-                                   fname='flower_photos',
-                                   untar=True)
-
 # locate and print dataset directory
-path = pathlib.Path(data_dir)
+path = pathlib.Path('./flower_photos/flower_photos/sunflowers')
 print("Dataset directory:", path, "\n")
 
-###
-
-# load flower dataset
-train_images = tf.keras.preprocessing.image_dataset_from_directory(path)
-
-# find class names
-class_names = train_images.class_names
-
-# select dataset class
-class_num = 0
-selected_class = class_names[class_num]
-# print selected dataset class
-print("\nSelected class:", selected_class, "\n")
-
-data_dir = os.path.join(data_dir, selected_class)
+# import photos into a numpy array
 train_images = []
-for _, file in enumerate(os.listdir(data_dir)):
-    temp_dir = os.path.join(data_dir, file)
+for _, file in enumerate(os.listdir(path)):
+    temp_dir = os.path.join(path, file)
     image = PIL.Image.open(temp_dir)
+    #image.show()
     # format the image suitably for processing
     newsize = (28, 28)
     image = image.resize(newsize) # resize
@@ -65,14 +51,14 @@ for _, file in enumerate(os.listdir(data_dir)):
     data = np.asarray(image, dtype=np.float32)
     train_images.append(data)
 
-# Convert data into Tensor
+# convert data into Tensor
 train_images = tf.convert_to_tensor(train_images)
 
 train_images = train_images.reshape(train_images.shape[0], 28, 28, 1)
 train_images = (train_images - 127.5) / 127.5  # Normalize the images to [-1, 1]
 
 BUFFER_SIZE = 60000
-BATCH_SIZE = 1
+BATCH_SIZE = 8
 
 # Batch and shuffle the data
 train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
@@ -223,23 +209,3 @@ def generate_and_save_images(model, epoch, test_input):
 train(train_dataset, EPOCHS)
 
 checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
-
-# Display a single image using the epoch number
-def display_image(epoch_no):
-  return PIL.Image.open('{}image_at_epoch_{:04d}.png'.format(results_dir, epoch_no))
-
-display_image(EPOCHS)
-
-# generate GIF at the end of program
-anim_file = results_dir + 'dcgan.gif'
-
-with imageio.get_writer(anim_file, mode='I') as writer:
-  filenames = glob.glob(results_dir + 'image*.png')
-  filenames = sorted(filenames)
-  for filename in filenames:
-    image = imageio.imread(filename)
-    writer.append_data(image)
-  image = imageio.imread(filename)
-  writer.append_data(image)
-
-embed.embed_file(anim_file)
