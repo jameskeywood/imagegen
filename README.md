@@ -31,6 +31,7 @@ Search function to create a collection based on internet images.
 - PIL resize images: https://www.geeksforgeeks.org/python-pil-image-resize-method/
 - Face GAN: https://betterprogramming.pub/making-a-face-gan-with-tensorflow-23b4b79b4de7
 - Dog Dataset: http://vision.stanford.edu/aditya86/ImageNetDogs/
+- Matplotlib limitation: https://github.com/matplotlib/mplfinance/issues/386
 
 ## Datasets
 Put the expected archive in the directory of the script, and it will be extracted and used.
