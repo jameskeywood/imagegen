@@ -19,6 +19,9 @@ Search function to create a collection based on internet images.
 - Script will scrape internet for collection of related images.
 - Algorithm will then produce an image based on search.
 
+Sell created images as NFTs.
+- https://opensea.io/collection/pretend-plants
+
 ## Resources
 - Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
 - GAN overview: https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f
@@ -38,6 +41,7 @@ Put the expected archive in the directory of the script, and it will be extracte
 - Face dataset: http://vis-www.cs.umass.edu/lfw/lfw.tgz
 - Flower dataset: https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
 - Dog dataset: https://vision.stanford.edu/aditya86/ImageNetDogs/images.tar
+- Mushroom dataset: https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images
 
 ## Versions
 - TensorFlow v2.6.0
