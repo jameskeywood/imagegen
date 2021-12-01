@@ -1,13 +1,11 @@
-# https://betterprogramming.pub/making-a-face-gan-with-tensorflow-23b4b79b4de7
-
 import os
 
 os.add_dll_directory("C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin")
 os.add_dll_directory("C:/Users/James/Documents/cuda/bin")
 
 import tarfile
-my_tar = tarfile.open('lfw.tgz')
-my_tar.extractall('./lfw') # specify which folder to extract to
+my_tar = tarfile.open('dogs.tar')
+my_tar.extractall('./dogs') # specify which folder to extract to
 my_tar.close()
 
 import tensorflow as tf
@@ -21,15 +19,17 @@ def get_ds(path):
   img = tf.image.decode_jpeg(img,channels=3)
   img = tf.image.convert_image_dtype(img,tf.float32)
   img = tf.divide(tf.subtract(tf.multiply(img,255),127.5),127.5)
-  return tf.image.resize(img,(64,64)) 
+  return tf.image.resize(img,(64,64))
 
 images = []
-for i in os.scandir('lfw/lfw'):
+for i in os.scandir('dogs/Images'):
   for j in os.scandir(i.path):
     images.append(j.path)
 
+print("\nImages found:", len(images), "\n")
+
 images = tf.data.Dataset.from_tensor_slices(images)
-BATCH_SIZE = 64
+BATCH_SIZE = 8
 train_images = images.map(get_ds,num_parallel_calls=tf.data.experimental.AUTOTUNE).batch(BATCH_SIZE).shuffle(60000)
 
 def make_generator_model():
@@ -140,6 +140,7 @@ def train_step(images):
 
 from IPython import display
 import time
+
 def train(dataset,epochs):
   for epoch in range(epochs):
     start = time.time()
@@ -170,30 +171,4 @@ def generate_and_save_output(model,epoch,test_input):
   #plt.show()
 
 train(train_images,EPOCHS)
-
-import imageio
-import glob
-anim_file = 'dcgan.gif'
-
-with imageio.get_writer(anim_file, mode='I') as writer:
-  filenames = glob.glob('image*.png')
-  filenames = sorted(filenames)
-  last = -1
-  for i,filename in enumerate(filenames):
-    frame = 2*(i**0.5)
-    if round(frame) > round(last):
-      last = frame
-    else:
-      continue
-    image = imageio.imread(filename)
-    writer.append_data(image)
-  image = imageio.imread(filename)
-  writer.append_data(image)
-
-import IPython
-if IPython.version_info > (6,2,0,''):
-  display.Image(filename=anim_file)
-
-new_image = generator(tf.random.normal([1,100]),training=False)
-plt.imshow(new_image[0,:,:,:])
 

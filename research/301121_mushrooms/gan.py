@@ -1,18 +1,19 @@
-# https://betterprogramming.pub/making-a-face-gan-with-tensorflow-23b4b79b4de7
-
 import os
 
 os.add_dll_directory("C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin")
 os.add_dll_directory("C:/Users/James/Documents/cuda/bin")
 
-import tarfile
-my_tar = tarfile.open('dogs.tar')
-my_tar.extractall('./dogs') # specify which folder to extract to
-my_tar.close()
+from zipfile import ZipFile
+with ZipFile('mushrooms.zip', 'r') as zipObj:
+   # Extract all the contents of zip file in current directory
+   zipObj.extractall()
+
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use("Agg") # remove gui output and save memory
 
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 import PIL
 from tensorflow.keras import layers
 
@@ -24,11 +25,8 @@ def get_ds(path):
   return tf.image.resize(img,(64,64))
 
 images = []
-for i in os.scandir('dogs/Images'):
-  for j in os.scandir(i.path):
-    images.append(j.path)
-
-print("\nImages found:", len(images), "\n")
+for i in os.scandir('Mushrooms/Suillus'):
+  images.append(i.path)
 
 images = tf.data.Dataset.from_tensor_slices(images)
 BATCH_SIZE = 8
@@ -116,9 +114,11 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  generator=generator,
                                  discriminator=discriminator)
 
-EPOCHS = 200
+results_dir = 'output/'
+
+EPOCHS = 30000
 noise_dims = 100
-num_egs_to_generate = 16
+num_egs_to_generate = 1
 seed = tf.random.normal([num_egs_to_generate,noise_dims])
 
 @tf.function
@@ -162,15 +162,18 @@ def train(dataset,epochs):
 def generate_and_save_output(model,epoch,test_input):
 
   predictions = model(test_input,training=False)
-  # predictions = predictions.numpy().reshape(16,64,64,1)
-  fig = plt.figure(figsize=(4,4))
-  # print(predictions)
+  fig = plt.figure(figsize=(1,1))
   for i in range(predictions.shape[0]):
-    plt.subplot(4,4,i+1)
+    plt.subplot(1,1,i+1)
     plt.imshow((predictions[i]*127.5+127.5).numpy().astype(np.uint8),cmap='gray')
     plt.axis('off')
-  plt.savefig(f'image_at_epoch_{epoch}.png')
-  #plt.show()
+
+  if not os.path.isdir(results_dir):
+    os.makedirs(results_dir)
+
+  # save the photo every 100 epochs
+  if epoch % 100 == 0:
+    plt.savefig(f'{results_dir}image_at_epoch_{epoch}.png')
 
 train(train_images,EPOCHS)
 
