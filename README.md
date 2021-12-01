@@ -20,7 +20,7 @@ Search function to create a collection based on internet images.
 - Algorithm will then produce an image based on search.
 
 Sell created images as NFTs.
-- https://opensea.io/collection/pretend-plants
+- https://opensea.io/collection/personalplants
 
 ## Resources
 - Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
