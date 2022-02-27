@@ -21,6 +21,7 @@ Search function to create a collection based on internet images.
 
 Sell created images as NFTs.
 - https://opensea.io/collection/personalplant
+- https://opensea.io/collection/personalplanet
 
 ## Resources
 - Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b
@@ -35,6 +36,8 @@ Sell created images as NFTs.
 - Face GAN: https://betterprogramming.pub/making-a-face-gan-with-tensorflow-23b4b79b4de7
 - Dog Dataset: http://vision.stanford.edu/aditya86/ImageNetDogs/
 - Matplotlib limitation: https://github.com/matplotlib/mplfinance/issues/386
+- Training faster and better: https://medium.com/intel-student-ambassadors/tips-on-training-your-gans-faster-and-achieve-better-results-9200354acaa5
+- Convert a video to sequence of images: https://www.codegrepper.com/code-examples/python/convert+video+to+frames+python+opencv
 
 ## Datasets
 Put the expected archive in the directory of the script, and it will be extracted and used.
@@ -42,6 +45,7 @@ Put the expected archive in the directory of the script, and it will be extracte
 - Flower dataset: https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
 - Dog dataset: https://vision.stanford.edu/aditya86/ImageNetDogs/images.tar
 - Mushroom dataset: https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images
+- Planet dataset: https://sos.noaa.gov/catalog/datasets/?category=Space&subcategory=Planets%20and%20Exoplanets
 
 ## Versions
 - TensorFlow v2.6.0

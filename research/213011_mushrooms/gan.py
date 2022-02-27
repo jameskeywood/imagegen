@@ -25,7 +25,7 @@ def get_ds(path):
   return tf.image.resize(img,(64,64))
 
 images = []
-for i in os.scandir('Mushrooms/Suillus'):
+for i in os.scandir('Mushrooms/Cortinarius'):
   images.append(i.path)
 
 images = tf.data.Dataset.from_tensor_slices(images)
@@ -34,7 +34,7 @@ train_images = images.map(get_ds,num_parallel_calls=tf.data.experimental.AUTOTUN
 
 def make_generator_model():
     model = tf.keras.models.Sequential()
-    model.add(layers.Dense(8*8*128,input_shape=(100,),use_bias=False))    # creates output shape of 7,7 with number of neurons - [7,7,256]
+    model.add(layers.Dense(8*8*128,input_shape=(128,),use_bias=False))    # creates output shape of 7,7 with number of neurons - [7,7,256]
     model.add(layers.BatchNormalization())
     model.add(layers.LeakyReLU())
     
@@ -65,7 +65,7 @@ def make_generator_model():
     return model
 
 generator = make_generator_model()
-noise = tf.random.normal([1,100])
+noise = tf.random.normal([1,128])
 generated_image = generator(noise,training=False)
 
 # x = generated_image.numpy().reshape(64,64,1)
@@ -92,8 +92,6 @@ print(decision)
 
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
-
-
 def discriminator_loss(real_output,fake_output):
   real_loss = cross_entropy(tf.ones_like(real_output),real_output)
   fake_loss = cross_entropy(tf.zeros_like(fake_output),fake_output)
@@ -116,8 +114,8 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
 
 results_dir = 'output/'
 
-EPOCHS = 30000
-noise_dims = 100
+EPOCHS = 1000
+noise_dims = 128
 num_egs_to_generate = 1
 seed = tf.random.normal([num_egs_to_generate,noise_dims])
 
