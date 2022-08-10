@@ -38,6 +38,7 @@ Sell created images as NFTs.
 - Matplotlib limitation: https://github.com/matplotlib/mplfinance/issues/386
 - Training faster and better: https://medium.com/intel-student-ambassadors/tips-on-training-your-gans-faster-and-achieve-better-results-9200354acaa5
 - Convert a video to sequence of images: https://www.codegrepper.com/code-examples/python/convert+video+to+frames+python+opencv
+- Help on matplotlib save function: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
 
 ## Datasets
 Put the expected archive in the directory of the script, and it will be extracted and used.
@@ -46,6 +47,7 @@ Put the expected archive in the directory of the script, and it will be extracte
 - Dog dataset: https://vision.stanford.edu/aditya86/ImageNetDogs/images.tar
 - Mushroom dataset: https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images
 - Planet dataset: https://sos.noaa.gov/catalog/datasets/?category=Space&subcategory=Planets%20and%20Exoplanets
+- Room dataset: https://github.com/emanhamed/Houses-dataset
 
 ## Versions
 - TensorFlow v2.6.0
