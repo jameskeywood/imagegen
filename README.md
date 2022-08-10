@@ -6,7 +6,7 @@
 
 ##
 
-![GANs](https://github.com/jameskeywood/geno/blob/main/research/GANs.png?raw=true)
+![GANs](https://github.com/jameskeywood/geno/blob/main/GANs.png?raw=true)
 
 ## Forks
 Instagram account to post the generated images.
