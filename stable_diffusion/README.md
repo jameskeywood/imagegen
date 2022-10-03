@@ -3,7 +3,7 @@
 
 ##
 
-![Stable Diffusion](https://github.com/jameskeywood/geno/blob/main/StableDiffusion.png?raw=true)
+![Stable Diffusion](https://github.com/jameskeywood/geno/blob/main/stable_diffusion/StableDiffusion.png?raw=true)
 
 ## Resources
 

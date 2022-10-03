@@ -3,7 +3,7 @@
 
 ##
 
-![GANs](https://github.com/jameskeywood/geno/blob/main/GANs.png?raw=true)
+![GANs](https://github.com/jameskeywood/geno/blob/main/gan/GANs.png?raw=true)
 
 ## Resources
 - Image generation: https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b

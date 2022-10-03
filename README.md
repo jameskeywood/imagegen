@@ -2,10 +2,8 @@
 
 ## Summary
 - Machine learning algorithm that can create an image from a collection of photographs.
-
-##
-
-![Models](https://github.com/jameskeywood/geno/blob/main/models.jpg?raw=true)
+- Initially used a GAN to generate images.
+- Currently working on stable diffusion models.
 
 ## Ideas
 Instagram account to post the generated images.
@@ -21,3 +19,5 @@ Search function to create a collection based on internet images.
 Sell created images as NFTs.
 - https://opensea.io/collection/personalplant
 - https://opensea.io/collection/personalplanet
+
+Use stable diffusion to have text to image functionality.
