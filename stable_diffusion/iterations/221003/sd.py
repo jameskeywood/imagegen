@@ -12,7 +12,7 @@ from diffusers import StableDiffusionPipeline
 from PIL import Image
 
 # hugging face access token
-access_token = "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"
+access_token = "hf..."
 
 # creating the pipeline
 experimental_pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", revision="fp16", torch_dtype=torch.float16, use_auth_token=access_token) 
