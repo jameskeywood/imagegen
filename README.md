@@ -1,4 +1,4 @@
-# geno
+# imagegen
 
 ## Summary
 - Machine learning algorithm that can create an image from a collection of photographs.
